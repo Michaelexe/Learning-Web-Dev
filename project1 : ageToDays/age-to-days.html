@@ -1,0 +1,41 @@
+
+<html>
+<head>
+
+	<style>
+
+		h1 {
+			color: white; text-shadow: 3px 3px 5px black
+		}
+
+		p {
+			color: white;
+		}
+		
+		body {
+			background-color: grey;
+		}
+
+	</style>
+
+	<title>Age To Days</title>
+</head>
+<body>
+	<div style="position: relative; top: 80px">
+		<h1 align="center"> YOUR AGE IN DAYS IS:</h1>		
+	</div>
+
+	<div style="position: absolute; top: 200px; left: 220; width: 150px;">
+		<button style="color: white; background-color: blue; height: 60px; width: 100%; font-size: 20px; border-radius: 8px", onclick="ageInDays()"><b>Click me</b></button>
+	</div>
+
+	<div style="position: absolute; top: 200px; left: 640; width: 150px;">
+		<button style="color: white; background-color: red; height: 60px; width: 100%; font-size: 20px; border-radius: 8px", onclick="reset()"><b>Reset</b></button>
+	</div>
+	<div style="position: absolute; top: 300px; width: 99%">
+		<h1 style="color: cyan" align="center" id="yourAge"></h1>
+	</div>
+	<script src="age-to-days.js"></script>
+
+</body>
+</html>
