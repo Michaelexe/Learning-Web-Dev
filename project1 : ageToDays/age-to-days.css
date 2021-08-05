@@ -1,0 +1,69 @@
+h1 {
+	color: white; 
+	text-shadow: 3px 3px 5px black
+}
+
+
+p {
+	color: white;
+}
+
+
+body {
+	background-color: grey;
+	margin: 0;
+}
+
+
+#Click-me {
+	color: white; 
+	background-color: blue; 
+	height: 60px; 
+	width: 100%; 
+	font-size: 20px; 
+	border-radius: 8px
+}
+
+
+#Reset {
+	color: white; 
+	background-color: red; 
+	height: 60px; 
+	width: 100%; 
+	font-size: 20px; 
+	border-radius: 8px
+}
+
+
+#yourAge {
+	color: cyan
+}
+
+
+#header-div {
+	position: relative; 
+	top: 80px
+}
+
+
+#click-me-div {
+	position: absolute; 
+	top: 200px; 
+	left: 220; 
+	width: 150px;
+}
+
+
+#reset-div {
+	position: absolute; 
+	top: 200px; 
+	left: 640; 
+	width: 150px;
+}
+
+
+#yourAge-div {
+	position: absolute; 
+	top: 300px; 
+	width: 100%
+}
