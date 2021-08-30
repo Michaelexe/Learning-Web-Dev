@@ -151,6 +151,6 @@ const randomObject = {
 }
 
 for (let i in randomObject) {
-	console.log(i + ' scored ' + randomObject[i].toString());
+	console.log(i + ' scored ' + randomObject[i]);
 }
 
