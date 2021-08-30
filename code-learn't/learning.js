@@ -116,3 +116,13 @@ switch (colour) {
 }
 
 
+
+//here's how to make a random number generator
+function randNumGen(max) {
+	return Math.floor(Math.random() * max);
+}
+/*how this works is Math.random generates a random and long float between 0 and 1 exclusive 
+of 1 and is multiplied with max to give a number from that range and then Math.floor removes all 
+the remaining decimals */
+
+console.log(randNumGen(100));
