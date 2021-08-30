@@ -73,6 +73,10 @@ let dog = {
 	bark: function () {
 		return this.name + ' Barks!'; //this is equivalent to self in python
 	},
+
+	doubleBark() {
+		console.log('bark bark!'); //another way of making a method
+	}
 };
 
 
