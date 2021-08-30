@@ -135,3 +135,22 @@ for (let i of randomArray) {
 	console.log(i)
 }
 //this is very similar to python, instead of in we are using of
+
+
+/*using 'in' instead of 'of' gives the keys or index instead. This can be useful for iterating
+through objects as you can't iterate through objects using for...of*/
+
+for (let i in randomArray) {
+	console.log(i)
+}
+
+const randomObject = {
+	'John':95,
+	'Sam':85,
+	'Tim':98
+}
+
+for (let i in randomObject) {
+	console.log(i + ' scored ' + randomObject[i].toString());
+}
+
