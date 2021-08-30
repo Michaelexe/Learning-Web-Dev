@@ -126,3 +126,12 @@ of 1 and is multiplied with max to give a number from that range and then Math.f
 the remaining decimals */
 
 console.log(randNumGen(100));
+
+
+//there is a more python like for loop for arrays called for...of. its syntax is as follows:
+const randomArray = ['first', 'second', 'third'];
+
+for (let i of randomArray) {
+	console.log(i)
+}
+//this is very similar to python, instead of in we are using of
