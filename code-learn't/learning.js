@@ -177,3 +177,12 @@ function rolltwice(func) {
 }
 
 rolltwice(rolldice)
+
+
+
+//you can avoid errors using try/catch
+try { //this is used to run a code that might potentially have an error
+	invalidVariable.toUpperCase()
+} catch { //and if it did have an error, whatever is in "catch" is executed
+	console.log('above code had an error hence this was executed instead.')
+}
