@@ -8,11 +8,11 @@ alert('yo'); //brings up an alert in the browser with the text in ()
 
 var randomVariable = 5000; //creates a variable
 let randomVariable2 = 10000; //also creates a variable, let is considered as better practice
+//var lets you use the variable outside a function even if you declared it inside one.
 
 
 
-var userName = prompt('What is your name?'); //takes input from user and assigns it to the variable
-//for some reason using let doesnt work the way you want it to with prompt, so use var instead
+let userName = prompt('What is your name?'); //takes input from user and assigns it to the variable
 
 
 
