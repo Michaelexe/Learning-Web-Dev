@@ -154,3 +154,8 @@ for (let i in randomObject) {
 	console.log(i + ' scored ' + randomObject[i]);
 }
 
+
+
+//string template literals 
+console.log(`this string is made using back ticks. 1+2+5 = ${1+2+5}`)
+
