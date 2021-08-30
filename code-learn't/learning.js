@@ -159,3 +159,17 @@ for (let i in randomObject) {
 //string template literals 
 console.log(`this string is made using back ticks. 1+2+5 = ${1+2+5}`)
 
+
+
+//you can assign functions to a variable and use it as an arguement in another function like this:
+const rolldice = function () {
+	let dice = Math.floor((Math.random()*6) + 1);
+	console.log(dice);
+}
+
+function rolltwice(func) {
+	func();
+	func();
+}
+
+rolltwice(rolldice)
