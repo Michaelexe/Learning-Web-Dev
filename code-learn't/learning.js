@@ -257,3 +257,18 @@ console.log(rating.some(r => r > 80)) //returns true
 //every checks if ALL of the elements in an array passed a test defined in the function and returns true if it does
 console.log(rating.every(r =>  r>80)) // returns false
 console.log(rating.every(r =>  r<95)) // returns true
+
+
+
+//REDUCE METHOD!
+console.log(rating.reduce((bestRating, currRating) => {
+	if (bestRating < currRating) {
+		return currRating
+	}
+	return bestRating
+})) //returns 90 as it is highest
+// how reduce works is that it holds a value(initially the first element and is named in the first arguement)
+// of whatever is returned in the function and can be changed 
+// within the same function by changing whatever is returned
+
+console.log(numbers.reduce((total,currElement)=> total+currElement))
