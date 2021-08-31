@@ -247,3 +247,13 @@ setTimeout(()=>{
 
 const odd = numbers.filter((nums)=> nums%2 == 1)
 console.log(odd)
+
+//SOME AND EVERY!!!
+//some checks if ANY of the elements in an array passes a test defined in the function and returns true if it does
+
+const rating = [85,60,65,75,90,62]
+console.log(rating.some(r => r > 80)) //returns true
+
+//every checks if ALL of the elements in an array passed a test defined in the function and returns true if it does
+console.log(rating.every(r =>  r>80)) // returns false
+console.log(rating.every(r =>  r<95)) // returns true
