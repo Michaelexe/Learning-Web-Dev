@@ -186,3 +186,64 @@ try { //this is used to run a code that might potentially have an error
 } catch { //and if it did have an error, whatever is in "catch" is executed
 	console.log('above code had an error hence this was executed instead.')
 }
+
+
+
+//ARRAY METHODS!!!
+
+//FOR EACH
+const numbers = [1,2,3,4,5,6,7,8,9,10]
+
+numbers.forEach(function(num){ //basically, for each element in this array, it executes the function.
+	console.log(num*num)
+})
+
+//MAPS!!
+const doubles = numbers.map(function(num){ //makes a new array with whatever in returned by the function
+	return num*2
+})
+console.log(doubles)
+
+//ARROW FUNCTIONS!
+// basically another way to declare a function but without using the keyword function
+
+const arrowFunction = () => {
+	console.log('====>')
+}
+arrowFunction()
+//if you use () instead of {} it automatically tells javascript that you want to return whatever is in the ()
+
+const returnName = (string) => (
+	string.toUpperCase()
+)
+console.log(returnName('Michael'))
+
+//you can make it even smaller and make it all in 1 line by removing the () and writing it in 1 line
+
+const add = (a,b) => a+b;
+console.log(add(5,4))
+
+//SETTIMEOUT AND SETINTERVAL!
+
+//setTimeout takes in a function you want to execute after a time period as its first arguement, and 
+//time period itself as the second arguement(in milliseconds)
+
+setTimeout(()=>{
+	console.log('...you still there?')
+}, 3000)
+
+//setInterval repeats a function that you give as the first arguement after an interval you set in 
+//milliseconds as the second arguement. It doesnt stop until you run clearInterval()
+
+// setInterval(()=>{
+// 	console.log(Math.random())
+// },2000)
+
+//this will be annoying so i'll comment it out
+
+
+//FILTER METHOD!
+//filter basically makes a new array with the elements that pass a test defined in the function in filter
+
+const odd = numbers.filter((nums)=> nums%2 == 1)
+console.log(odd)
