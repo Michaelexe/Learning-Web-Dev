@@ -272,3 +272,13 @@ console.log(rating.reduce((bestRating, currRating) => {
 // within the same function by changing whatever is returned
 
 console.log(numbers.reduce((total,currElement)=> total+currElement))
+
+//spread lets you put in the elements of an array as seperate arguements
+Math.max(...numbers) //... is the syntax
+
+//rest looks like spread but it goes into a functions param during declaration and creates an array
+// containing all the arguements that you enter in the future while using the function
+
+function sum(...num) {
+	console.log(num.reduce((total,el) => total + el) )
+}
