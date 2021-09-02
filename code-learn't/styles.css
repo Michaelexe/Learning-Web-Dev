@@ -21,14 +21,14 @@ body {
 
 
 #email {
-    width: 50%;
-    height: 2em;
-    border-radius: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 2.5em;
+    border-radius: 1.25em;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
     cursor: pointer;
 }
 
