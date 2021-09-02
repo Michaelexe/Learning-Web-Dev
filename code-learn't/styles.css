@@ -1,0 +1,44 @@
+h1{
+    color: white;
+}
+
+p {
+    color: white;
+    font-size: 40
+}
+
+body {
+    background-color: black; 
+}
+
+
+.button-center {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+#email {
+    width: 50%;
+    height: 2em;
+    border-radius: 1em;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+
+#email:hover {
+    background-color: white;
+}
+
+
+#email:hover h1{
+    color: black;
+}

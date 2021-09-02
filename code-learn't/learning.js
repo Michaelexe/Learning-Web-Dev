@@ -20,7 +20,8 @@ let userName = prompt('What is your name?'); //takes input from user and assigns
 function displayUserInfo(name) {
 	//following code edits the element with the id provided in () in the html file its linked to
 	document.getElementById('userName').innerHTML = 'Hello ' + name;
-}
+};
+
 displayUserInfo(userName);
 
 
@@ -30,7 +31,7 @@ let num = 0;
 while (num < 5) {
 	num++;
 	console.log(num);
-}
+};
 
 
 /*below code starts a for loop
@@ -41,7 +42,7 @@ The parathesis takes 3 arguements
 */
 for (let num1 = 0; num1 <=5; num1++) {
 	console.log(num1);
-}
+};
 
 
 
@@ -124,7 +125,7 @@ switch (colour) {
 //here's how to make a random number generator
 function randNumGen(max) {
 	return Math.floor(Math.random() * max);
-}
+};
 /*how this works is Math.random generates a random and long float between 0 and 1 exclusive 
 of 1 and is multiplied with max to give a number from that range and then Math.floor removes all 
 the remaining decimals */
@@ -136,8 +137,8 @@ console.log(randNumGen(100));
 const randomArray = ['first', 'second', 'third'];
 
 for (let i of randomArray) {
-	console.log(i)
-}
+	console.log(i);
+};
 //this is very similar to python, instead of in we are using of
 
 
@@ -145,23 +146,23 @@ for (let i of randomArray) {
 through objects as you can't iterate through objects using for...of*/
 
 for (let i in randomArray) {
-	console.log(i)
-}
+	console.log(i);
+};
 
 const randomObject = {
 	'John':95,
 	'Sam':85,
 	'Tim':98
-}
+};
 
 for (let i in randomObject) {
 	console.log(i + ' scored ' + randomObject[i]);
-}
+};
 
 
 
 //string template literals 
-console.log(`this string is made using back ticks. 1+2+5 = ${1+2+5}`)
+console.log(`this string is made using back ticks. 1+2+5 = ${1+2+5}`);
 
 
 
@@ -169,14 +170,14 @@ console.log(`this string is made using back ticks. 1+2+5 = ${1+2+5}`)
 const rolldice = function () {
 	let dice = Math.floor((Math.random()*6) + 1);
 	console.log(dice);
-}
+};
 
 function rolltwice(func) {
 	func();
 	func();
-}
+};
 
-rolltwice(rolldice)
+rolltwice(rolldice);
 
 
 
@@ -192,15 +193,15 @@ try { //this is used to run a code that might potentially have an error
 //ARRAY METHODS!!!
 
 //FOR EACH
-const numbers = [1,2,3,4,5,6,7,8,9,10]
+const numbers = [1,2,3,4,5,6,7,8,9,10];
 
 numbers.forEach(function(num){ //basically, for each element in this array, it executes the function.
-	console.log(num*num)
+	console.log(num*num);
 })
 
 //MAPS!!
 const doubles = numbers.map(function(num){ //makes a new array with whatever in returned by the function
-	return num*2
+	return num*2;
 })
 console.log(doubles)
 
@@ -208,7 +209,7 @@ console.log(doubles)
 // basically another way to declare a function but without using the keyword function
 
 const arrowFunction = () => {
-	console.log('====>')
+	console.log('====>');
 }
 arrowFunction()
 //if you use () instead of {} it automatically tells javascript that you want to return whatever is in the ()
@@ -216,12 +217,12 @@ arrowFunction()
 const returnName = (string) => (
 	string.toUpperCase()
 )
-console.log(returnName('Michael'))
+console.log(returnName('Michael'));
 
 //you can make it even smaller and make it all in 1 line by removing the () and writing it in 1 line
 
 const add = (a,b) => a+b;
-console.log(add(5,4))
+console.log(add(5,4));
 
 //SETTIMEOUT AND SETINTERVAL!
 
@@ -229,7 +230,7 @@ console.log(add(5,4))
 //time period itself as the second arguement(in milliseconds)
 
 setTimeout(()=>{
-	console.log('...you still there?')
+	console.log('...you still there?');
 }, 3000)
 
 //setInterval repeats a function that you give as the first arguement after an interval you set in 
@@ -245,18 +246,18 @@ setTimeout(()=>{
 //FILTER METHOD!
 //filter basically makes a new array with the elements that pass a test defined in the function in filter
 
-const odd = numbers.filter((nums)=> nums%2 == 1)
-console.log(odd)
+const odd = numbers.filter((nums)=> nums%2 == 1);
+console.log(odd);
 
 //SOME AND EVERY!!!
 //some checks if ANY of the elements in an array passes a test defined in the function and returns true if it does
 
-const rating = [85,60,65,75,90,62]
-console.log(rating.some(r => r > 80)) //returns true
+const rating = [85,60,65,75,90,62];
+console.log(rating.some(r => r > 80)); //returns true
 
 //every checks if ALL of the elements in an array passed a test defined in the function and returns true if it does
-console.log(rating.every(r =>  r>80)) // returns false
-console.log(rating.every(r =>  r<95)) // returns true
+console.log(rating.every(r =>  r>80)); // returns false
+console.log(rating.every(r =>  r<95)); // returns true
 
 
 
@@ -271,14 +272,74 @@ console.log(rating.reduce((bestRating, currRating) => {
 // of whatever is returned in the function and can be changed 
 // within the same function by changing whatever is returned
 
-console.log(numbers.reduce((total,currElement)=> total+currElement))
+console.log(numbers.reduce((total,currElement)=> total+currElement));
 
 //spread lets you put in the elements of an array as seperate arguements
-Math.max(...numbers) //... is the syntax
+Math.max(...numbers); //... is the syntax
 
 //rest looks like spread but it goes into a functions param during declaration and creates an array
 // containing all the arguements that you enter in the future while using the function
 
 function sum(...num) {
-	console.log(num.reduce((total,el) => total + el) )
+	console.log(num.reduce((total,el) => total + el) );
 }
+
+
+
+
+//MORE DOM STUFF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//you can create an element an element using createElement('tagName') and appending it as a child
+//of an element using document.{element you want to append to}.appendChild('element you are appending')
+
+const moreText = document.createElement('h1')
+moreText.innerHTML = 'How are you?'
+moreText.style.textAlign = 'center'
+document.body.appendChild(moreText)
+
+//you can also use append(anything) to add anything valid at the end, such as text to a paragraph or an element to a div
+const newText = document.createElement('h1')
+newText.append('adding this text to the element using append()')
+newText.style.textAlign = 'center'
+body.append(newText)
+
+//prepend() is pretty much self-explanatory
+newText.prepend('adding this using prepend().......')
+
+//if you want to insert an element adjucent to another element, you can use 
+//targetElement.insertAdjacentElement(beforebegin/afterend, the element itself)
+
+const evenMoreText = document.createElement('h1')
+evenMoreText.append('adding this adjacent to the moreText using insertAdjacentElement()')
+evenMoreText.style.textAlign = 'center'
+moreText.insertAdjacentElement('afterend', evenMoreText)
+
+//after() does the same thing as insertAdjacentElement(afterend, element)
+
+
+//remove is self-explanitory too
+setTimeout(()=> {
+	evenMoreText.remove()
+	console.log('removed an h1 element')
+},5000)
+
+//EVENTS!!!!!!
+const button1 = document.createElement('button')
+button1.classList.toggle('button-center')
+button1.innerHTML = 'button1'
+document.body.append(button1)
+button1.addEventListener('click', function(){
+	console.log('you clicked button1')
+})
+
+const email = document.querySelector('#email')
+const emailText = email.children[0].innerHTML
+email.addEventListener('click', function(){
+	const tempElement = document.createElement('textarea')
+	tempElement.value = emailText;
+	document.body.append(tempElement)
+	tempElement.select()
+	document.execCommand('copy')
+	tempElement.remove()
+	console.log('copied')
+})
