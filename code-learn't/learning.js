@@ -343,3 +343,14 @@ email.addEventListener('click', function(){
 	tempElement.remove()
 	console.log('copied')
 })
+
+
+
+window.addEventListener('keydown',function(e){
+	console.log(e.code)
+})
+
+const pressKey = document.createElement('h1')
+pressKey.innerHTML = 'Press a key and it will show up in the console'
+pressKey.style.textAlign = 'center'
+body.append(pressKey)
