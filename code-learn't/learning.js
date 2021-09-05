@@ -328,7 +328,7 @@ const button1 = document.createElement('button')
 button1.classList.toggle('button-center')
 button1.innerHTML = 'button1'
 document.body.append(button1)
-button1.addEventListener('click', function(){
+button1.addEventListener('click', function(){ //checks for clicks
 	console.log('you clicked button1')
 })
 
@@ -338,19 +338,49 @@ email.addEventListener('click', function(){
 	const tempElement = document.createElement('textarea')
 	tempElement.value = emailText;
 	document.body.append(tempElement)
-	tempElement.select()
-	document.execCommand('copy')
-	tempElement.remove()
+	tempElement.select() //select whats in the textarea
+	document.execCommand('copy') //copiies what is selected
+	tempElement.remove() //removes the temporary element
 	console.log('copied')
 })
 
 
 
-window.addEventListener('keydown',function(e){
-	console.log(e.code)
+window.addEventListener('keydown',function(e){ //checks what when key is pressed down
+	console.log(e.code) //displays what key is pressed
 })
 
 const pressKey = document.createElement('h1')
 pressKey.innerHTML = 'Press a key and it will show up in the console'
 pressKey.style.textAlign = 'center'
 body.append(pressKey)
+
+
+
+//PROMISES!!
+//They help avoid a lot of nesting and a lot of callback
+
+const rainbowBackground = (color, delay) => {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			document.body.style.backgroundColor = color;
+			resolve()
+		},delay)
+	})
+}
+
+const rainbowBackgroundButton = document.createElement('button')
+rainbowBackgroundButton.classList.toggle('button-center')
+rainbowBackgroundButton.innerHTML = 'RAINBOW!'
+body.append(rainbowBackgroundButton)
+
+rainbowBackgroundButton.addEventListener('click',()=>{
+	rainbowBackground('red',1000)
+		.then(() => rainbowBackground('orange',1000))
+		.then(() => rainbowBackground('yellow',1000))
+		.then(() => rainbowBackground('green',1000))
+		.then(() => rainbowBackground('blue',1000))
+		.then(() => rainbowBackground('indigo',1000))
+		.then(() => rainbowBackground('violet',1000))
+		.then(() => rainbowBackground('black',1000))
+})
