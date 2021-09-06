@@ -360,11 +360,11 @@ body.append(pressKey)
 //PROMISES!!
 //They help avoid a lot of nesting and a lot of callback
 
-const rainbowBackground = (color, delay) => {
-	return new Promise((resolve) => {
+const rainbowBackgroundFunction = (color, delay) => {
+	return new Promise((response,reect) => {
 		setTimeout(() => {
 			document.body.style.backgroundColor = color;
-			resolve()
+			response()
 		},delay)
 	})
 }
@@ -374,13 +374,33 @@ rainbowBackgroundButton.classList.toggle('button-center')
 rainbowBackgroundButton.innerHTML = 'RAINBOW!'
 body.append(rainbowBackgroundButton)
 
-rainbowBackgroundButton.addEventListener('click',()=>{
-	rainbowBackground('red',1000)
-		.then(() => rainbowBackground('orange',1000))
-		.then(() => rainbowBackground('yellow',1000))
-		.then(() => rainbowBackground('green',1000))
-		.then(() => rainbowBackground('blue',1000))
-		.then(() => rainbowBackground('indigo',1000))
-		.then(() => rainbowBackground('violet',1000))
-		.then(() => rainbowBackground('black',1000))
+// rainbowBackgroundButton.addEventListener('click',()=>{
+// 	rainbowBackground('red',1000)
+// 		.then(() => rainbowBackground('orange',1000))
+// 		.then(() => rainbowBackground('yellow',1000))
+// 		.then(() => rainbowBackground('green',1000))
+// 		.then(() => rainbowBackground('blue',1000))
+// 		.then(() => rainbowBackground('indigo',1000))
+// 		.then(() => rainbowBackground('violet',1000))
+// 		.then(() => rainbowBackground('black',1000))
+// })
+
+
+
+//a better way to use promises is by using the async keyword
+const rainbowBackground = async () => {
+	await rainbowBackgroundFunction('red',1000)
+	await rainbowBackgroundFunction('orange',1000)
+	await rainbowBackgroundFunction('yellow',1000)
+	await rainbowBackgroundFunction('green',1000)
+	await rainbowBackgroundFunction('blue',1000)
+	await rainbowBackgroundFunction('indigo',1000)
+	await rainbowBackgroundFunction('violet',1000)
+	await rainbowBackgroundFunction('black',1000)
+}
+
+
+
+rainbowBackgroundButton.addEventListener('click',()=> {
+	rainbowBackground()
 })
