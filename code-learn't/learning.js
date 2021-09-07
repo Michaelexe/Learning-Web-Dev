@@ -404,3 +404,33 @@ const rainbowBackground = async () => {
 rainbowBackgroundButton.addEventListener('click',()=> {
 	rainbowBackground()
 })
+
+
+
+//APISSS!!!!!!!
+
+// fetch('https://api.cryptonator.com/api/ticker/btc-usd')// creates a promise, containing the status code and headers
+// 	.then(res => res.json()) //creates another promise containing the data AKA json)
+
+// 	.then(data => {
+// 		console.log(data.ticker.price)
+// 	})
+
+// 	.catch(e => {
+// 		console.log('ERROR!', e)
+// 	})
+
+// a cleaner way to run the above code is by using async functions
+
+const fetchBitcoinPrice = async () => {
+	try {
+		const res = await fetch('https://api.cryptonator.com/api/ticker/btc-usd')
+		const data = await res.json()
+		console.log(data.ticker.price)
+	} catch {e => {
+		console.log('SOMETHING WENT WRONG', e)
+	}}
+}
+
+
+fetchBitcoinPrice()
