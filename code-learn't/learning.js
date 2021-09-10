@@ -361,7 +361,7 @@ body.append(pressKey)
 //They help avoid a lot of nesting and a lot of callback
 
 const rainbowBackgroundFunction = (color, delay) => {
-	return new Promise((response,reect) => {
+	return new Promise((response,reject) => {
 		setTimeout(() => {
 			document.body.style.backgroundColor = color;
 			response()
@@ -434,3 +434,22 @@ const fetchBitcoinPrice = async () => {
 
 
 fetchBitcoinPrice()
+
+
+
+//CLASSES!
+class Color{
+	constructor(r,g,b){ //equavalent to __init__ in python
+		this.r = r;
+		this.g = g;
+		this.b = b;
+	}
+
+	rgb() {
+		return `rgb(${this.r},${this.g},${this.b})`
+	}
+
+	rgba(a=1) {
+		return `rgba(${this.r},${this.g},${this.b}, ${a}`
+	}
+}
