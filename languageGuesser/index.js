@@ -14,7 +14,7 @@ for (let string of text) {
     if (languageObject) {
         console.log(languageObject.name.green)
     } else {
-        console.log('Language could not be detected'.red)
+        console.log('Language could not be detected, please try again with a larger sample'.red)
     }
 
 
