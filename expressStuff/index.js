@@ -20,6 +20,8 @@ app.get('/r/:subreddit', (req, res)=> {
     const { subreddit } = req.params
     if (redditData[subreddit]) {
         res.render('subreddit', { subreddit, subredditData : redditData[subreddit] })
+    } else {
+        res.send('<h1>Subreddit not found</h1>')
     }
 })
 
