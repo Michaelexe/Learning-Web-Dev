@@ -9,11 +9,13 @@
 <body>
     <h1>you are visiting the <%= subreddit %> subreddit </h1>
 
-    <% if (subreddit === 'cat') { %>
-    <h1>MEOOOOOOOOWW</h1>
-    <% } else { %>
-    <h1>No MEOOOOOOOOOOW</h1>
-    <% } %>
-
+    <% for (posts of subredditData.posts) { %> 
+        <h2><%= posts["title"] %> </h2>
+        <h3><%= posts["author"] %> </h3>
+        <% if (posts["img"]) { %> 
+            <img src="<%= posts["img"] %> "
+        <% } %> 
+    <% } %> 
+    
 </body>
 </html>
