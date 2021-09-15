@@ -6,6 +6,7 @@ const path = require('path')
 //setting engines and the views folder directory
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
+app.use(express.static('public'))
 
 //gets requests and responses from the root url
 app.get('/', (req,res) => {
