@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/subreddit.css">
+
     <title><%= subreddit %> </title>
 </head>
 <body>
-    <h1>you are visiting the <%= subreddit %> subreddit </h1>
+    <div id="topbar">
+        <h1 style="color: white;">r/<%= subreddit %> subreddit </h1>
+        <h2><%= subredditData.description %> </h2>
+    </div>
 
-    <% for (posts of subredditData.posts) { %> 
+    <div id="container">
+    <% for (let posts of subredditData.posts) { %> 
+        <div class="cards">        
         <h2><%= posts["title"] %> </h2>
         <h3><%= posts["author"] %> </h3>
         <% if (posts["img"]) { %> 
-            <img src="<%= posts["img"] %> "
+            <img src="<%= posts["img"] %>">
         <% } %> 
+        </div>
     <% } %> 
+    </div>
     
 </body>
 </html>
