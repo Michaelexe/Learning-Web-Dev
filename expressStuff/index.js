@@ -21,9 +21,11 @@ app.get('/r/:subreddit', (req, res)=> {
     if (redditData[subreddit]) {
         res.render('subreddit', { subreddit, subredditData : redditData[subreddit] })
     } else {
-        res.send('<h1>Subreddit not found</h1>')
+        res.send('Subreddit not found')
     }
 })
+
+
 
 app.listen(3000, ()=>{ //3000 is the port
     console.log('LISTENING ON PORT 3000')

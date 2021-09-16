@@ -17,15 +17,17 @@
 
     <div id="container">
     <% for (let posts of subredditData.posts) { %> 
-        <div class="cards">        
+        <div class="cards">
         <h2><%= posts["title"] %> </h2>
         <h3><%= posts["author"] %> </h3>
         <% if (posts["img"]) { %> 
             <img src="<%= posts["img"] %>">
         <% } %> 
+        <input type="text" placeholder="comment" class="comment_input">
         </div>
     <% } %> 
     </div>
     
+    <script src="/subreddit.js"></script>
 </body>
 </html>

@@ -43,3 +43,36 @@ body {
     padding: 50px;
     box-shadow: 3px 3px 5px grey;
 }
+
+
+
+.comment_input {
+    width: 100%;
+    height: 32px;
+    font-size: 24px;
+    border: none;
+    border-bottom: 2px solid grey;
+    transition: 200ms ease-in border-bottom;
+}
+
+
+
+.comment_input:focus {
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+
+
+.comment_div {
+    width: 100%;
+    border-bottom: 2px solid black;
+    background-color: beige;
+}
+
+
+
+.commenth2 {
+    position: relative;
+    left: 20px;
+}
