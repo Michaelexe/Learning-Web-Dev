@@ -38,8 +38,7 @@ app.post('/r/:subreddit/:postID/makecomment', (req, res) => {
         }
     }
     
-    res.redirect(`/r/${subreddit}`)
-    
+    res.redirect(`/r/${subreddit}`) 
 })
 
 
