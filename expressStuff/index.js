@@ -1,4 +1,5 @@
 //importing whatever we need
+const { urlencoded } = require('express');
 const express = require('express');
 const app = express()
 const path = require('path')
@@ -8,6 +9,7 @@ const redditData = require('./data.json')
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
 app.use(express.static('public')) //static fo;es folder name
+app.use(express.urlencoded({extended: true}))
 
 
 //gets requests and responses from the root url
@@ -25,6 +27,20 @@ app.get('/r/:subreddit', (req, res)=> {
     }
 })
 
+
+app.post('/r/:subreddit/:postID/makecomment', (req, res) => {
+    const { comment } = req.body
+    const { subreddit, postID } = req.params
+
+    for (let posts of redditData[subreddit].posts) {
+        if (posts.id == postID) {
+            posts.comment.push(comment)
+        }
+    }
+    
+    res.redirect(`/r/${subreddit}`)
+    
+})
 
 
 app.listen(3000, ()=>{ //3000 is the port

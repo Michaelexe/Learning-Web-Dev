@@ -23,11 +23,18 @@
         <% if (posts["img"]) { %> 
             <img src="<%= posts["img"] %>">
         <% } %> 
-        <input type="text" placeholder="comment" class="comment_input">
+        <form action="/r/<%= subreddit %>/<%= posts.id %>/makecomment" method="POST" style="width: 100%;">
+            <input type="text" placeholder="comment" class="comment_input" name="comment">
+            <button>Post</button>
+        </form>
+        <% for (let comments of posts.comment) { %> 
+            <div class="comment_div">
+                <h2 class="commenth2"><%= comments %></h2>
+            </div>
+        <% } %> 
         </div>
     <% } %> 
     </div>
     
-    <script src="/subreddit.js"></script>
 </body>
 </html>
