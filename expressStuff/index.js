@@ -4,12 +4,14 @@ const express = require('express');
 const app = express()
 const path = require('path')
 const redditData = require('./data.json')
+const methodOverride = require('method-override')
 
 //setting engines and the views folder directory
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
 app.use(express.static('public')) //static fo;es folder name
 app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 
 
 //gets requests and responses from the root url
@@ -40,6 +42,24 @@ app.post('/r/:subreddit/:postID/makecomment', (req, res) => {
     
     res.redirect(`/r/${subreddit}`) 
 })
+
+
+
+app.get('/r/:subreddit/:postID/:commentID/edit', (req,res) => {
+    const { subreddit, postID, commentID } = req.params
+    const oldComment = redditData[subreddit]["posts"][postID]["comment"][commentID]
+    res.render('edit', { subreddit, postID, commentID, oldComment })
+})
+
+
+
+app.patch('/r/:subreddit/:postID/:commentID/patch', (req,res) => {
+    const { subreddit, postID, commentID } = req.params
+    const { newComment } = req.body
+    redditData[subreddit]["posts"][postID]["comment"][commentID] = newComment
+    res.redirect(`/r/${subreddit}`)
+})
+
 
 
 app.listen(3000, ()=>{ //3000 is the port
