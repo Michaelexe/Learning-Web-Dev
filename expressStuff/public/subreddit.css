@@ -76,3 +76,13 @@ body {
     position: relative;
     left: 20px;
 }
+
+
+
+.username {
+    position: absolute;
+    left: 50px;
+    top: 25px;
+    color: white;
+    margin: 0;
+}

@@ -1,10 +1,10 @@
 //importing whatever we need
-const { urlencoded } = require('express');
 const express = require('express');
 const app = express()
 const path = require('path')
 const redditData = require('./data.json')
 const methodOverride = require('method-override')
+const cookieParser = require('cookie-parser')
 
 //setting engines and the views folder directory
 app.set('view engine', 'ejs');
@@ -12,18 +12,21 @@ app.set('views', path.join(__dirname, '/views'))
 app.use(express.static('public')) //static fo;es folder name
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+app.use(cookieParser())
 
 
 //gets requests and responses from the root url
 app.get('/', (req,res) => {
-    res.render('home') //rendering the ejs file in the views folder
+    const { username } = req.cookies
+    res.render('home', {username}) //rendering the ejs file in the views folder
 })
 
 //gets requests and responses from the /r/(variable) url
 app.get('/r/:subreddit', (req, res)=> {
     const { subreddit } = req.params
+    const { username } = req.cookies
     if (redditData[subreddit]) {
-        res.render('subreddit', { subreddit, subredditData : redditData[subreddit] })
+        res.render('subreddit', { subreddit, subredditData : redditData[subreddit], username })
     } else {
         res.send('Subreddit not found')
     }
@@ -58,6 +61,14 @@ app.patch('/r/:subreddit/:postID/:commentID/patch', (req,res) => {
     const { newComment } = req.body
     redditData[subreddit]["posts"][postID]["comment"][commentID] = newComment
     res.redirect(`/r/${subreddit}`)
+})
+
+
+
+app.post('/setUserName', (req,res) => {
+    const { username } = req.body
+    res.cookie('username', username)
+    res.redirect('/')
 })
 
 

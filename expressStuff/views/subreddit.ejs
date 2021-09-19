@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="topbar">
+        <h2 class="username"><u><% if (username) { %><%= username %><% } %></u></h2>
         <h1 style="color: white;">r/<%= subreddit %> subreddit </h1>
         <h2><%= subredditData.description %> </h2>
     </div>
@@ -29,7 +30,7 @@
         </form>
         <% for (let comments of posts.comment) { %> 
             <div class="comment_div">
-                <h2 class="commenth2"><%= comments %></h2>
+                <h2 class="commenth2"><span style="color: rgb(70, 70, 70);"><% if (username) { %><%= username %><% } %> : </span><%= comments %></h2>
                 <a href="/r/<%= subreddit %>/<%= posts.id %>/<%= posts.comment.indexOf(comments) %>/edit" style="display:block; text-align:right; margin-right:50px; margin-bottom:5px">edit</a>
             </div>
         <% } %> 

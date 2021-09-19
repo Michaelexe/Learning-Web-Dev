@@ -11,5 +11,10 @@
     <h1>Hello random dude that has downloaded this...</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est libero dolorum voluptates assumenda repellendus iusto autem error dolore sequi tempore quod illo fuga totam, soluta maiores repellat pariatur. Molestias, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aperiam consequatur libero voluptatibus quos consectetur! Iste unde quod molestiae, ad neque placeat beatae enim pariatur ipsa dolorum reiciendis exercitationem modi.</p>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus ipsa, ratione esse minus adipisci, ex, quasi saepe quod voluptate nobis unde assumenda non tempora accusantium nemo illo distinctio quos eum nostrum amet! Nostrum eius porro deserunt libero? Ducimus, iste! Eligendi eius perferendis quam asperiores rem corporis nesciunt dolore necessitatibus maiores delectus, voluptate aspernatur placeat est perspiciatis totam iste ullam eum fugiat nemo debitis sapiente. Unde eum officiis minus, quia quam ex distinctio blanditiis voluptate ad ipsam error commodi exercitationem! Dolorem et quo nulla aperiam illo sunt quidem ab ullam in nam eveniet minima inventore est laborum eos placeat, libero fuga.</p>
+
+    <form action="/setUserName" method="POST" style="width: 60%; margin: auto;">
+        <input name="username" type="text" placeholder="Username" class="username_input" <% if (username) { %> value="<%= username %>" <% } %> >
+        <button>Enter</button>
+    </form>
 </body>
 </html>
